@@ -1,0 +1,5 @@
+Net::GeoIP
+
+This project contains the Net::GeoIP module to interface with the GeoIP library provided by MaxMind.
+
+More documentation is forthcoming, I promise.
