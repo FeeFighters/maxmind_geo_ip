@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date = %q{2009-02-25}
   s.description = %q{MaxMind Ruby GeoIP API, for accessing MaxMind GeoIP data files}
   s.email = %q{josh@feefighters.com}
-  s.files = [].flatten
+  s.files = ['lib/max_mind/net/geoip.bundle'].flatten
   s.executables = []
   s.has_rdoc = false
   s.homepage = %q{https://github.com/FeeFighters/maxmind_geo_ip}
