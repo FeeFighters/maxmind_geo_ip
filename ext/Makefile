@@ -44,10 +44,10 @@ LIBRUBYARG_SHARED = -l$(RUBY_SO_NAME)
 LIBRUBYARG_STATIC = -l$(RUBY_SO_NAME)-static
 
 RUBY_EXTCONF_H = 
-CFLAGS   =  -fno-common -g -O2  -fno-common -pipe -fno-common $(cflags) 
-INCFLAGS = -I. -I. -I/Users/krall/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/i686-darwin10.4.0 -I.
+CFLAGS   =  -fno-common -DGEOIPDATADIR=\"/usr/local/share/GeoIP\" 
+INCFLAGS = -I. -I$(topdir) -I$(hdrdir) -I$(srcdir)
 DEFS     = 
-CPPFLAGS =   -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  
+CPPFLAGS =   -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE $(DEFS) $(cppflags)
 CXXFLAGS = $(CFLAGS) 
 ldflags  = -L. 
 dldflags = 
@@ -86,7 +86,7 @@ extout =
 extout_prefix = 
 target_prefix = /net
 LOCAL_LIBS = 
-LIBS = $(LIBRUBYARG_SHARED) -lGeoIP  -ldl -lobjc  
+LIBS = $(LIBRUBYARG_SHARED)  -ldl -lobjc  
 SRCS = GeoIP.c geoip_ruby.c GeoIPCity.c GeoIPUpdate.c md5.c record.c regionName.c timeZone.c
 OBJS = GeoIP.o geoip_ruby.o GeoIPCity.o GeoIPUpdate.o md5.o record.o regionName.o timeZone.o
 TARGET = geoip

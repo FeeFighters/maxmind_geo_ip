@@ -1,0 +1,6 @@
+data
+lib
+ext/*.o
+ext/Makefile
+ext/*.LOG
+ext/mkmf.log

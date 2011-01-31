@@ -1,4 +1,4 @@
-have_library: checking for GeoIP_new() in -lGeoIP... -------------------- yes
+have_library: checking for GeoIP_new() in -lGeoIP... -------------------- no
 
 "gcc -o conftest -I. -I/Users/krall/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/i686-darwin10.4.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -g -O2  -fno-common -pipe -fno-common   conftest.c  -L. -L/Users/krall/.rvm/rubies/ruby-1.8.7-p249/lib -L.      -lruby-static -lGeoIP  -ldl -lobjc  "
 conftest.c: In function ‘t’:
@@ -13,6 +13,8 @@ checked program was:
 /* end */
 
 "gcc -o conftest -I. -I/Users/krall/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/i686-darwin10.4.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -g -O2  -fno-common -pipe -fno-common   conftest.c  -L. -L/Users/krall/.rvm/rubies/ruby-1.8.7-p249/lib -L.      -lruby-static -lGeoIP  -ldl -lobjc  "
+ld: library not found for -lGeoIP
+collect2: ld returned 1 exit status
 checked program was:
 /* begin */
 1: /*top*/
