@@ -8,7 +8,7 @@ class GeoIPInitTest < Test::Unit::TestCase
   include GeoIPTestHelpers
 
   def test_should_require_net_geoip
-    assert_not_nil require('net/geoip')
+    assert_not_nil require('max_mind/net/geoip')
   end
 
   def test_should_define_net_geoip_class
