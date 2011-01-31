@@ -9,11 +9,12 @@ Gem::Specification.new do |s|
   s.date = %q{2009-02-25}
   s.description = %q{MaxMind Ruby GeoIP API, for accessing MaxMind GeoIP data files}
   s.email = %q{josh@feefighters.com}
-  s.files = ['lib/max_mind/net/geoip.bundle'].flatten
+  s.files = [].flatten
+  s.extensions << 'ext/extconf.rb'
   s.executables = []
   s.has_rdoc = false
   s.homepage = %q{https://github.com/FeeFighters/maxmind_geo_ip}
-  s.require_paths = ["lib"]
+  s.require_paths = ['lib', 'ext']
   s.rubygems_version = %q{1.3.1}
   s.summary = %q{Use this gem to access MaxMind GeoIP data files.  C library is built-in, so no dependencies are needed.}
 
