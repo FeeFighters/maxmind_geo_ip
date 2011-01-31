@@ -1,14 +1,14 @@
 require 'test/unit'
 require 'geoip_test_helpers'
 
-require 'net/geoip'
+require 'max_mind/net/geoip'
 
 
 class GeoIPRecordLookupTest < Test::Unit::TestCase
   include GeoIPTestHelpers
 
   def setup
-    @geoip = Net::GeoIP.new(city_database_filename)
+    @geoip = MaxMind::Net::GeoIP.new(city_database_filename)
   end
 
   def teardown
@@ -26,7 +26,7 @@ class GeoIPRecordLookupTest < Test::Unit::TestCase
   end
 
   def test_should_raise_exception_for_localhost_from_country_code
-    assert_raises(Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].country_code }
+    assert_raises(MaxMind::Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].country_code }
   end
 
   # country_code3
@@ -40,7 +40,7 @@ class GeoIPRecordLookupTest < Test::Unit::TestCase
   end
 
   def test_should_raise_exception_for_localhost_from_country_code3
-    assert_raises(Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].country_code3 }
+    assert_raises(MaxMind::Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].country_code3 }
   end
 
   # country_name
@@ -54,7 +54,7 @@ class GeoIPRecordLookupTest < Test::Unit::TestCase
   end
 
   def test_should_raise_exception_for_localhost_from_country_name
-    assert_raises(Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].country_name }
+    assert_raises(MaxMind::Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].country_name }
   end
 
   # region
@@ -68,7 +68,7 @@ class GeoIPRecordLookupTest < Test::Unit::TestCase
   end
 
   def test_should_raise_exception_for_localhost_from_region
-    assert_raises(Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].region }
+    assert_raises(MaxMind::Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].region }
   end
 
   # city
@@ -82,7 +82,7 @@ class GeoIPRecordLookupTest < Test::Unit::TestCase
   end
 
   def test_should_raise_exception_for_localhost_from_city
-    assert_raises(Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].city }
+    assert_raises(MaxMind::Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].city }
   end
 
   # postal_code
@@ -96,7 +96,7 @@ class GeoIPRecordLookupTest < Test::Unit::TestCase
   end
 
   def test_should_raise_exception_for_localhost_from_postal_code
-    assert_raises(Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].postal_code }
+    assert_raises(MaxMind::Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].postal_code }
   end
 
   # latitude
@@ -110,7 +110,7 @@ class GeoIPRecordLookupTest < Test::Unit::TestCase
   end
 
   def test_should_raise_exception_for_localhost_from_latitude
-    assert_raises(Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].latitude }
+    assert_raises(MaxMind::Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].latitude }
   end
 
   # longitude
@@ -124,7 +124,7 @@ class GeoIPRecordLookupTest < Test::Unit::TestCase
   end
 
   def test_should_raise_exception_for_localhost_from_latitude
-    assert_raises(Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].latitude }
+    assert_raises(MaxMind::Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].latitude }
   end
 
   # dma_code
@@ -138,7 +138,7 @@ class GeoIPRecordLookupTest < Test::Unit::TestCase
   end
 
   def test_should_raise_exception_for_localhost_from_dma_code
-    assert_raises(Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].dma_code }
+    assert_raises(MaxMind::Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].dma_code }
   end
 
   # area_code
@@ -152,7 +152,7 @@ class GeoIPRecordLookupTest < Test::Unit::TestCase
   end
 
   def test_should_raise_exception_for_localhost_from_area_code
-    assert_raises(Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].area_code }
+    assert_raises(MaxMind::Net::GeoIP::RecordNotFoundError) { @geoip['127.0.0.1'].area_code }
   end
 
 end

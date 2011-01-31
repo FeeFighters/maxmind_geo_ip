@@ -15,8 +15,8 @@ task :build_extension do
 end
 
 task :move_extension do
-  FileUtils.mkdir_p 'lib/net'
-  FileUtils.mv 'ext/geoip.bundle', 'lib/net/geoip.bundle'
+  FileUtils.mkdir_p 'lib/max_mind/net'
+  FileUtils.mv 'ext/geoip.bundle', 'lib/max_mind/net/geoip.bundle'
 end
 
 task :clean_extension do

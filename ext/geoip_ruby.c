@@ -82,9 +82,10 @@ geoip_index(VALUE self, VALUE index) {
 
 void
 Init_geoip() {
-	VALUE mNet;
+	VALUE mMaxMind, mNet;
 
-	mNet = rb_define_module("Net");
+	mMaxMind = rb_define_module("MaxMind");
+	mNet = rb_define_module_under(mMaxMind, "Net");
 
 	cGeoIP = rb_define_class_under(mNet, "GeoIP", rb_cObject);
 	rb_define_alloc_func(cGeoIP, geoip_alloc);
