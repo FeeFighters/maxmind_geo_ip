@@ -1,0 +1,24 @@
+have_library: checking for GeoIP_new() in -lGeoIP... -------------------- yes
+
+"gcc -o conftest -I. -I/Users/krall/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/i686-darwin10.4.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -g -O2  -fno-common -pipe -fno-common   conftest.c  -L. -L/Users/krall/.rvm/rubies/ruby-1.8.7-p249/lib -L.      -lruby-static -lGeoIP  -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘GeoIP_new’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))GeoIP_new; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/Users/krall/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/i686-darwin10.4.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -g -O2  -fno-common -pipe -fno-common   conftest.c  -L. -L/Users/krall/.rvm/rubies/ruby-1.8.7-p249/lib -L.      -lruby-static -lGeoIP  -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { GeoIP_new(); return 0; }
+/* end */
+
+--------------------
+

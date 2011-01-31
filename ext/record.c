@@ -1,4 +1,4 @@
-#include "geoip.h"
+#include "geoip_ruby.h"
 
 
 //
@@ -8,9 +8,9 @@
 VALUE
 geoip_record_alloc(VALUE klass) {
 	GeoIPRecordContainer *container;
-	
+
 	container = ALLOC(GeoIPRecordContainer);
-	
+
 	return Data_Wrap_Struct(klass, 0, geoip_record_free, container);
 }
 
@@ -19,9 +19,9 @@ geoip_record_free(GeoIPRecordContainer *container) {
 	if (container->record) {
 		GeoIPRecord_delete(container->record);
 	}
-	
+
 	free(container);
-	
+
 	return;
 }
 
@@ -39,21 +39,21 @@ VALUE
 geoip_record_initialize(VALUE self, VALUE database, VALUE host) {
 	GeoIPContainer *geoip_container;
 	GeoIPRecordContainer *container;
-	
+
 	if (!rb_obj_is_kind_of(database, cGeoIP)) {
 		rb_raise(rb_eTypeError, "First argument should be an instance of Net::GeoIP.");
 	}
 	Check_Type(host, T_STRING);
-	
+
 	Data_Get_Struct(database, GeoIPContainer, geoip_container);
 	Data_Get_Struct(self, GeoIPRecordContainer, container);
-	
+
 	container->record = GeoIP_record_by_name(geoip_container->geoip, RSTRING(host)->ptr);
-	
+
 	if (container->record == NULL) {
 		rb_raise(cGeoIPRecordNotFoundError, "Record Not Found.");
 	}
-	
+
 	return self;
 }
 

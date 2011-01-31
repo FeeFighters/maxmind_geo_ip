@@ -1,0 +1,1 @@
+cc -dynamic -bundle -undefined suppress -flat_namespace -o geoip.bundle GeoIP.o geoip_ruby.o GeoIPCity.o GeoIPUpdate.o md5.o record.o regionName.o timeZone.o -L. -L/Users/krall/.rvm/rubies/ruby-1.8.7-p249/lib -L.     -lruby -lGeoIP  -ldl -lobjc  
