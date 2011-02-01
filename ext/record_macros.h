@@ -11,7 +11,7 @@ geoip_record_##name(VALUE self) { \
 	GeoIPRecordContainer *container; \
   Data_Get_Struct(self, GeoIPRecordContainer, container); \
   \
-	if (container->record == NULL) return Qnil; \
+	if (container->record == NULL || container->record->name == NULL) return Qnil; \
 	\
 	return func(container->record->name); \
 } \
