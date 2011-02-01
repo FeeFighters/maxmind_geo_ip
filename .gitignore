@@ -1,5 +1,5 @@
 data
-lib
+lib/max_mind/net/geoip.bundle
 ext/*.o
 ext/Makefile
 ext/*.LOG
