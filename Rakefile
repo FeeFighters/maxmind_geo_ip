@@ -20,7 +20,7 @@ task :move_extension do
 end
 
 task :clean_extension do
-  FileUtils.rm_r('lib/net')
+  FileUtils.rm_r('lib/max_mind/net')
   Dir.chdir('ext') do
     system "make distclean"
   end

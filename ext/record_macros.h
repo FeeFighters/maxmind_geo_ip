@@ -11,13 +11,23 @@ geoip_record_##name(VALUE self) { \
 	GeoIPRecordContainer *container; \
   Data_Get_Struct(self, GeoIPRecordContainer, container); \
   \
-	if (container->record == NULL || container->record->name == NULL) return Qnil; \
+	if (container->record == NULL) return Qnil; \
 	\
 	return func(container->record->name); \
 } \
 
-#define GEOIP_RECORD_STRING_ACCESSOR(name) GEOIP_RECORD_ACCESSOR(name,rb_str_new2)
 #define GEOIP_RECORD_FLOAT_ACCESSOR(name) GEOIP_RECORD_ACCESSOR(name,rb_float_new)
 #define GEOIP_RECORD_INT_ACCESSOR(name) GEOIP_RECORD_ACCESSOR(name,rb_int_new)
+#define GEOIP_RECORD_STRING_ACCESSOR(name) \
+VALUE \
+geoip_record_##name(VALUE self) { \
+	GeoIPRecordContainer *container; \
+  Data_Get_Struct(self, GeoIPRecordContainer, container); \
+  \
+	if (container->record == NULL || container->record->name == NULL) return Qnil; \
+	\
+	return rb_str_new2(container->record->name); \
+} \
+
 
 #endif
